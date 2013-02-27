@@ -1,4 +1,20 @@
-﻿namespace GemBuddy
+﻿/* Copyright 2013 uberamd
+ * This file is part of GemBuddy.
+ * 
+ * GemBuddy is free software: you can redistribute it and/or 
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ * 
+ * GemBuddy is distributed in the hope that it will be useful, 
+ * but WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See 
+ * the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License 
+ * along with GemBuddy. If not, see http://www.gnu.org/licenses/.
+*/
+namespace GemBuddy
 {
     partial class Form1
     {
@@ -32,7 +48,7 @@
             this.gemTimer = new System.Windows.Forms.Timer(this.components);
             this.txtGemCount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSet = new System.Windows.Forms.Button();
             this.lblCraftBtn = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl3Set = new System.Windows.Forms.Label();
@@ -65,15 +81,15 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Number of Tier 1 Gems to Craft";
             // 
-            // button1
+            // btnSet
             // 
-            this.button1.Location = new System.Drawing.Point(251, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Set";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.button1_KeyPress);
+            this.btnSet.Location = new System.Drawing.Point(251, 4);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(61, 23);
+            this.btnSet.TabIndex = 9;
+            this.btnSet.Text = "Set";
+            this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnSet_KeyPress);
             // 
             // lblCraftBtn
             // 
@@ -174,7 +190,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTemp);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSet);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtGemCount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -191,7 +207,7 @@
         private System.Windows.Forms.Timer gemTimer;
         private System.Windows.Forms.TextBox txtGemCount;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSet;
         private System.Windows.Forms.Label lblCraftBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl3Set;
