@@ -81,7 +81,7 @@ namespace GemBuddy
         private void gemTimer_Tick(object sender, EventArgs e)
         {
             Debug.WriteLine("--> Ticked! Counter => " + counter.ToString() + " tier1 => " + tier1.ToString() + " tier2 => " + tier2.ToString() + " tier3 => " + tier3.ToString());
-            if(counter < tier1)
+            if (counter < tier1 && posDic.ContainsKey("pos1X"))
             {
                 // Works pretty simply, if gem1 hasn't been picked
                 // we'll pick the gem by clicking the coords
@@ -99,7 +99,9 @@ namespace GemBuddy
                 LeftMouseClick(posDic["btnX"], posDic["btnY"]);
                 counter++;
                 lbl1Set.Text = (tier1 - counter).ToString();
-            } else if(counter < tier2) {
+            } 
+            else if(counter < tier2 && posDic.ContainsKey("pos2X")) 
+            {
                 if (!hasPicked2)
                 {
                     LeftMouseClick(posDic["pos2X"], posDic["pos2Y"]);
@@ -109,7 +111,9 @@ namespace GemBuddy
                 LeftMouseClick(posDic["btnX"], posDic["btnY"]);
                 counter++;
                 lbl2Set.Text = (tier2 - counter).ToString();
-            } else if(counter < tier3) {
+            }
+            else if (counter < tier3 && posDic.ContainsKey("pos3X"))
+            {
                 if (!hasPicked3)
                 {
                     LeftMouseClick(posDic["pos3X"], posDic["pos3Y"]);
@@ -177,6 +181,14 @@ namespace GemBuddy
             // User presses 4 to set the craft button coords
             if (key == '4')
             {
+                try
+                {
+                    // Attempt removal of key
+                    posDic.Remove("btnX");
+                    posDic.Remove("btnY");
+                }
+                catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
+
                 posDic.Add("btnX", Cursor.Position.X);
                 posDic.Add("btnY", Cursor.Position.Y);
                 lblCraftBtn.Text = "SET";
